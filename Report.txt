@@ -1,0 +1,33 @@
+Brief Report on Workflow and Challenges
+
+Workflow:
+1. Data Extraction
+   - Retrieved data from Dawn and BBC websites using web scraping techniques.
+
+2. Data Cleaning
+   - Applied preprocessing steps to clean and prepare the text data for analysis.
+
+3. Data Storage
+   - Stored cleaned data in CSV files (`dawn_data.csv`, `bbc_data.csv`).
+
+4. DAG Development
+   - Implemented an Apache Airflow DAG (`mlops_dag.py`) to automate data extraction, transformation, and storage.
+
+5. Execution
+   - Scheduled the DAG to run daily for continuous data updates.
+
+6. Documentation
+   - Documented data preprocessing steps and DVC setup for reproducibility and version control.
+
+Challenges Encountered:
+1. Relative Paths in Airflow Configuration
+   - Faced issues with SQLite database connection due to relative paths. Resolved by specifying absolute paths in Airflow configuration.
+
+2. Circular Import Error
+   - Encountered circular import error while importing Airflow modules in DAG script. Solved by renaming the file to avoid conflicts.
+
+3. NLTK Data Path Setup
+   - Needed to set NLTK data path manually for proper functioning of NLTK modules.
+
+4. Dependency Management
+   - Ensured proper dependency management to handle task dependencies and error management in the DAG.

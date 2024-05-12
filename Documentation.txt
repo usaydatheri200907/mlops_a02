@@ -1,0 +1,35 @@
+Documentation of Data Preprocessing Steps and DVC Setup
+
+Data Preprocessing Steps:
+
+1. Data Extraction:
+   - Utilized `requests` library to fetch HTML content from the URLs.
+   - Used `BeautifulSoup` for parsing the HTML and extracting links, titles, and descriptions from articles.
+
+2. Data Cleaning:
+   - Removed HTML tags using regular expressions (`re` module).
+   - Eliminated special characters and numbers.
+   - Converted text to lowercase.
+   - Tokenized text using `word_tokenize` from `nltk.tokenize`.
+   - Removed stopwords using the `stopwords` corpus from `nltk.corpus`.
+   - Lemmatized words using `WordNetLemmatizer` from `nltk.stem`.
+
+3. Data Storage
+   - Stored cleaned data in CSV format using the `csv` module.
+
+DVC (Data Version Control) Setup:
+
+1. Installation
+   - Installed DVC using `pip install dvc`.
+
+2. Initialization
+   - Initialized DVC in the project directory using `dvc init`.
+
+3. Add Data Files
+   - Added the data files (`dawn_data.csv`, `bbc_data.csv`) to DVC using `dvc add`.
+
+4. Commit
+   - Committed the changes to DVC repository using `dvc commit`.
+
+5. Versioning Metadata
+   - Versioned metadata against each DVC push to GitHub repository.
